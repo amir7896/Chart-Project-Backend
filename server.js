@@ -28,6 +28,7 @@ passport.deserializeUser(User.deserializeUser());
 // ========================
 const apiRoutes = require('./routes/api');
 const authRoute  = require('./routes/auth');
+const resetRoute = require('./routes/resetpassword');
 
 // =======================
 // Session Configuration
@@ -71,6 +72,7 @@ db.once('open', () => {
 // ============
 app.use('/api',  apiRoutes);
 app.use('/', authRoute);
+app.use('/resetPass', resetRoute);
 
 
 
